@@ -46,8 +46,8 @@ function ImpactCard({ label, value, icon, trigger }) {
       onMouseEnter={e => e.currentTarget.style.transform = "translateY(-6px)"}
       onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}>
       <div style={{ fontSize: 36, marginBottom: 10 }}>{icon}</div>
-      <div style={{ fontSize: 36, fontFamily: "'Playfair Display', serif", fontWeight: 700, color: "#FFD28C", marginBottom: 6 }}>{count.toLocaleString()}+</div>
-      <div style={{ color: "#C9B99A", fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>{label}</div>
+      <div style={{ fontSize: 36, fontFamily: "'Playfair Display', serif", fontWeight: 700, color: "#006d7a", marginBottom: 6 }}>{count.toLocaleString()}+</div>
+      <div style={{ color: "#4a8a95", fontSize: 14, letterSpacing: 1, textTransform: "uppercase" }}>{label}</div>
     </div>
   );
 }
@@ -66,16 +66,16 @@ function AdminPage({ onLogout }) {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #1a0f00 0%, #2d1a05 40%, #1a0f00 100%)", fontFamily: "'Lato', sans-serif", color: "#F5EDE0", padding: "40px 20px" }}>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #0a3d4a 0%, #c8eff8 40%, #0a3d4a 100%)", fontFamily: "'Lato', sans-serif", color: "#0a3d4a", padding: "40px 20px" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap'); *{box-sizing:border-box;margin:0;padding:0;}`}</style>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 40 }}>
           <div>
-            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, color: "#FFD28C" }}>🔐 Tableau de bord</h1>
-            <p style={{ color: "#C9B99A", marginTop: 4 }}>Association Ait Oudafel Youngs</p>
+            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, color: "#006d7a" }}>🔐 Tableau de bord</h1>
+            <p style={{ color: "#4a8a95", marginTop: 4 }}>Association Ait Oudafel Youngs</p>
           </div>
           <div style={{ display: "flex", gap: 12 }}>
-            <button onClick={exportCSV} style={{ background: "rgba(255,210,140,0.15)", border: "1px solid rgba(255,210,140,0.4)", color: "#FFD28C", padding: "10px 20px", borderRadius: 50, cursor: "pointer", fontSize: 14 }}>📥 Exporter CSV</button>
+            <button onClick={exportCSV} style={{ background: "rgba(255,210,140,0.15)", border: "1px solid rgba(255,210,140,0.4)", color: "#006d7a", padding: "10px 20px", borderRadius: 50, cursor: "pointer", fontSize: 14 }}>📥 Exporter CSV</button>
             <button onClick={onLogout} style={{ background: "transparent", border: "1px solid rgba(255,100,100,0.4)", color: "#ff9999", padding: "10px 20px", borderRadius: 50, cursor: "pointer", fontSize: 14 }}>Déconnexion</button>
           </div>
         </div>
@@ -83,22 +83,22 @@ function AdminPage({ onLogout }) {
           {[{ label: "Total collecté", value: `${total.toLocaleString()}DHM`, icon: "💰" }, { label: "Nombre de dons", value: donations.length, icon: "📋" }, { label: "Don moyen", value: donations.length ? `${Math.round(total / donations.length)}DHM` : "—", icon: "📊" }].map((s, i) => (
             <div key={i} style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 16, padding: "24px", textAlign: "center" }}>
               <div style={{ fontSize: 30, marginBottom: 8 }}>{s.icon}</div>
-              <div style={{ fontSize: 28, fontFamily: "'Playfair Display', serif", fontWeight: 700, color: "#FFD28C" }}>{s.value}</div>
-              <div style={{ color: "#C9B99A", fontSize: 13, marginTop: 4 }}>{s.label}</div>
+              <div style={{ fontSize: 28, fontFamily: "'Playfair Display', serif", fontWeight: 700, color: "#006d7a" }}>{s.value}</div>
+              <div style={{ color: "#4a8a95", fontSize: 13, marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>
         <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 20, overflow: "hidden" }}>
           <div style={{ padding: "20px 28px", borderBottom: "1px solid rgba(255,210,140,0.15)" }}>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: "#FFD28C" }}>Liste des donations</h2>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, color: "#006d7a" }}>Liste des donations</h2>
           </div>
           {donations.length === 0 ? (
-            <div style={{ padding: "60px", textAlign: "center", color: "#C9B99A" }}><div style={{ fontSize: 40, marginBottom: 12 }}>📭</div>Aucune donation enregistrée pour l'instant.</div>
+            <div style={{ padding: "60px", textAlign: "center", color: "#4a8a95" }}><div style={{ fontSize: 40, marginBottom: 12 }}>📭</div>Aucune donation enregistrée pour l'instant.</div>
           ) : (
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr style={{ background: "rgba(255,210,140,0.08)" }}>
-                  {["Date", "Nom", "Email", "Montant", "Message"].map(h => <th key={h} style={{ padding: "14px 20px", textAlign: "left", color: "#C9B99A", fontSize: 12, textTransform: "uppercase", letterSpacing: 1, fontWeight: 400 }}>{h}</th>)}
+                  {["Date", "Nom", "Email", "Montant", "Message"].map(h => <th key={h} style={{ padding: "14px 20px", textAlign: "left", color: "#4a8a95", fontSize: 12, textTransform: "uppercase", letterSpacing: 1, fontWeight: 400 }}>{h}</th>)}
                 </tr>
               </thead>
               <tbody>
@@ -106,11 +106,11 @@ function AdminPage({ onLogout }) {
                   <tr key={i} style={{ borderTop: "1px solid rgba(255,210,140,0.08)" }}
                     onMouseEnter={e => e.currentTarget.style.background = "rgba(255,210,140,0.05)"}
                     onMouseLeave={e => e.currentTarget.style.background = "transparent"}>
-                    <td style={{ padding: "14px 20px", color: "#C9B99A", fontSize: 13 }}>{d.date}</td>
-                    <td style={{ padding: "14px 20px", color: "#F5EDE0", fontWeight: 700 }}>{d.name}</td>
-                    <td style={{ padding: "14px 20px", color: "#C9B99A", fontSize: 13 }}>{d.email}</td>
-                    <td style={{ padding: "14px 20px" }}><span style={{ background: "rgba(255,210,140,0.15)", color: "#FFD28C", padding: "4px 12px", borderRadius: 50, fontSize: 13, fontWeight: 700 }}>{d.amount}DHM</span></td>
-                    <td style={{ padding: "14px 20px", color: "#C9B99A", fontSize: 13, fontStyle: d.message ? "normal" : "italic" }}>{d.message || "—"}</td>
+                    <td style={{ padding: "14px 20px", color: "#4a8a95", fontSize: 13 }}>{d.date}</td>
+                    <td style={{ padding: "14px 20px", color: "#0a3d4a", fontWeight: 700 }}>{d.name}</td>
+                    <td style={{ padding: "14px 20px", color: "#4a8a95", fontSize: 13 }}>{d.email}</td>
+                    <td style={{ padding: "14px 20px" }}><span style={{ background: "rgba(255,210,140,0.15)", color: "#006d7a", padding: "4px 12px", borderRadius: 50, fontSize: 13, fontWeight: 700 }}>{d.amount}DHM</span></td>
+                    <td style={{ padding: "14px 20px", color: "#4a8a95", fontSize: 13, fontStyle: d.message ? "normal" : "italic" }}>{d.message || "—"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -131,17 +131,17 @@ function AdminLogin({ onLogin }) {
     else { setError(true); setTimeout(() => setError(false), 2000); }
   };
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #1a0f00 0%, #2d1a05 40%, #1a0f00 100%)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Lato', sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #0a3d4a 0%, #c8eff8 40%, #0a3d4a 100%)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Lato', sans-serif" }}>
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap'); *{box-sizing:border-box;margin:0;padding:0;}`}</style>
       <div style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 24, padding: "48px 40px", width: "100%", maxWidth: 400, textAlign: "center" }}>
         <div style={{ fontSize: 48, marginBottom: 16 }}>🔐</div>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, color: "#FFD28C", marginBottom: 8 }}>Espace Admin</h1>
-        <p style={{ color: "#C9B99A", fontSize: 14, marginBottom: 32 }}>Association Ait Oudafel Youngs</p>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, color: "#006d7a", marginBottom: 8 }}>Espace Admin</h1>
+        <p style={{ color: "#4a8a95", fontSize: 14, marginBottom: 32 }}>Association Ait Oudafel Youngs</p>
         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <input type="password" placeholder="Mot de passe" value={pwd} onChange={e => setPwd(e.target.value)}
-            style={{ background: "rgba(255,255,255,0.07)", border: `1px solid ${error ? "rgba(255,100,100,0.6)" : "rgba(255,210,140,0.25)"}`, borderRadius: 10, color: "#F5EDE0", padding: "13px 16px", fontSize: 15, outline: "none", textAlign: "center", letterSpacing: 4 }} />
+            style={{ background: "rgba(255,255,255,0.07)", border: `1px solid ${error ? "rgba(255,100,100,0.6)" : "rgba(255,210,140,0.25)"}`, borderRadius: 10, color: "#0a3d4a", padding: "13px 16px", fontSize: 15, outline: "none", textAlign: "center", letterSpacing: 4 }} />
           {error && <p style={{ color: "#ff9999", fontSize: 13 }}>Mot de passe incorrect</p>}
-          <button type="submit" style={{ background: "linear-gradient(135deg, #D4892A, #FFD28C)", border: "none", color: "#1a0f00", padding: "14px", borderRadius: 50, fontWeight: 700, fontSize: 16, cursor: "pointer" }}>Accéder au tableau de bord</button>
+          <button type="submit" style={{ background: "linear-gradient(135deg, #0097a7, #006d7a)", border: "none", color: "#0a3d4a", padding: "14px", borderRadius: 50, fontWeight: 700, fontSize: 16, cursor: "pointer" }}>Accéder au tableau de bord</button>
         </form>
       </div>
     </div>
@@ -211,20 +211,20 @@ export default function App() {
   if (page === "admin") return <AdminPage onLogout={() => setPage("home")} />;
 
   return (
-    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #1a0f00 0%, #2d1a05 40%, #1a0f00 100%)", fontFamily: "'Lato', sans-serif", color: "#F5EDE0", position: "relative", overflow: "hidden" }}>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #0a3d4a 0%, #c8eff8 40%, #0a3d4a 100%)", fontFamily: "'Lato', sans-serif", color: "#0a3d4a", position: "relative", overflow: "hidden" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
         *{box-sizing:border-box;margin:0;padding:0;}
         ::selection{background:rgba(255,210,140,0.3);}
-        .preset-btn{background:transparent;border:1px solid rgba(255,210,140,0.4);color:#FFD28C;padding:10px 18px;border-radius:50px;cursor:pointer;font-family:'Lato',sans-serif;font-size:15px;transition:all 0.2s;letter-spacing:0.5px;}
-        .preset-btn:hover,.preset-btn.active{background:#FFD28C;color:#1a0f00;border-color:#FFD28C;font-weight:700;}
-        input,textarea{background:rgba(255,255,255,0.07);border:1px solid rgba(255,210,140,0.25);border-radius:10px;color:#F5EDE0;padding:13px 16px;font-family:'Lato',sans-serif;font-size:15px;width:100%;outline:none;transition:border-color 0.2s;}
-        input:focus,textarea:focus{border-color:#FFD28C;}
+        .preset-btn{background:transparent;border:1px solid rgba(255,210,140,0.4);color:#006d7a;padding:10px 18px;border-radius:50px;cursor:pointer;font-family:'Lato',sans-serif;font-size:15px;transition:all 0.2s;letter-spacing:0.5px;}
+        .preset-btn:hover,.preset-btn.active{background:#006d7a;color:#0a3d4a;border-color:#006d7a;font-weight:700;}
+        input,textarea{background:rgba(255,255,255,0.07);border:1px solid rgba(255,210,140,0.25);border-radius:10px;color:#0a3d4a;padding:13px 16px;font-family:'Lato',sans-serif;font-size:15px;width:100%;outline:none;transition:border-color 0.2s;}
+        input:focus,textarea:focus{border-color:#006d7a;}
         input::placeholder,textarea::placeholder{color:rgba(245,237,224,0.4);}
         .floating-notif{animation:floatUp 3.5s ease-out forwards;}
         @keyframes floatUp{0%{opacity:0;transform:translateY(20px);}15%{opacity:1;transform:translateY(0);}80%{opacity:1;}100%{opacity:0;transform:translateY(-30px);}}
         .hero-pattern{position:absolute;top:0;left:0;right:0;height:100%;background-image:radial-gradient(circle at 20% 50%,rgba(255,210,140,0.06) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(200,130,50,0.08) 0%,transparent 40%);pointer-events:none;}
-        .donate-btn{background:linear-gradient(135deg,#D4892A,#FFD28C,#D4892A);background-size:200% 200%;border:none;color:#1a0f00;padding:16px 40px;border-radius:50px;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;cursor:pointer;width:100%;letter-spacing:1px;transition:all 0.3s;animation:shimmer 3s infinite;}
+        .donate-btn{background:linear-gradient(135deg,#0097a7,#006d7a,#0097a7);background-size:200% 200%;border:none;color:#0a3d4a;padding:16px 40px;border-radius:50px;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;cursor:pointer;width:100%;letter-spacing:1px;transition:all 0.3s;animation:shimmer 3s infinite;}
         .donate-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(212,137,42,0.5);}
         @keyframes shimmer{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
         .ornament{color:rgba(255,210,140,0.5);font-size:22px;letter-spacing:8px;}
@@ -240,7 +240,7 @@ export default function App() {
 
       <div style={{ position: "fixed", bottom: 30, left: 30, zIndex: 1000, display: "flex", flexDirection: "column", gap: 10 }}>
         {floatingDonations.map(d => (
-          <div key={d.id} className="floating-notif" style={{ background: "linear-gradient(135deg, #D4892A, #FFD28C)", color: "#1a0f00", padding: "12px 20px", borderRadius: 50, fontWeight: 700, fontSize: 14, boxShadow: "0 8px 30px rgba(212,137,42,0.5)" }}>
+          <div key={d.id} className="floating-notif" style={{ background: "linear-gradient(135deg, #0097a7, #006d7a)", color: "#0a3d4a", padding: "12px 20px", borderRadius: 50, fontWeight: 700, fontSize: 14, boxShadow: "0 8px 30px rgba(212,137,42,0.5)" }}>
             🎉 {d.name} vient de donner {d.amount}DHM !
           </div>
         ))}
@@ -248,37 +248,37 @@ export default function App() {
 
       <header style={{ borderBottom: "1px solid rgba(255,210,140,0.15)", padding: "20px 40px", display: "flex", alignItems: "center", justifyContent: "space-between", backdropFilter: "blur(5px)", position: "sticky", top: 0, zIndex: 100, background: "rgba(26,15,0,0.85)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <div style={{ width: 44, height: 44, background: "linear-gradient(135deg, #D4892A, #FFD28C)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🤝</div>
+          <div style={{ width: 44, height: 44, background: "linear-gradient(135deg, #0097a7, #006d7a)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🤝</div>
           <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 16, color: "#FFD28C", lineHeight: 1.1 }}>Association Ait Oudafel Youngs</div>
-            <div style={{ fontSize: 11, color: "#C9B99A", letterSpacing: 2, textTransform: "uppercase" }}>pour Aide</div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 16, color: "#006d7a", lineHeight: 1.1 }}>Association Ait Oudafel Youngs</div>
+            <div style={{ fontSize: 11, color: "#4a8a95", letterSpacing: 2, textTransform: "uppercase" }}>pour Aide</div>
           </div>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <button onClick={() => setPage("admin-login")} style={{ background: "transparent", border: "1px solid rgba(255,210,140,0.2)", color: "#C9B99A", padding: "8px 16px", borderRadius: 50, cursor: "pointer", fontSize: 12 }}>🔐 Admin</button>
-          <a href="#donate" style={{ background: "linear-gradient(135deg, #D4892A, #FFD28C)", color: "#1a0f00", textDecoration: "none", padding: "9px 24px", borderRadius: 50, fontWeight: 700, fontSize: 14 }}>Faire un don</a>
+          <button onClick={() => setPage("admin-login")} style={{ background: "transparent", border: "1px solid rgba(255,210,140,0.2)", color: "#4a8a95", padding: "8px 16px", borderRadius: 50, cursor: "pointer", fontSize: 12 }}>🔐 Admin</button>
+          <a href="#donate" style={{ background: "linear-gradient(135deg, #0097a7, #006d7a)", color: "#0a3d4a", textDecoration: "none", padding: "9px 24px", borderRadius: 50, fontWeight: 700, fontSize: 14 }}>Faire un don</a>
         </div>
       </header>
 
       <section style={{ padding: "100px 20px 60px", textAlign: "center", maxWidth: 750, margin: "0 auto" }}>
         <div className="ornament">— ✦ —</div>
-        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(38px, 7vw, 68px)", fontWeight: 700, lineHeight: 1.15, margin: "28px 0 22px", background: "linear-gradient(135deg, #F5EDE0, #FFD28C, #D4892A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+        <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: "clamp(38px, 7vw, 68px)", fontWeight: 700, lineHeight: 1.15, margin: "28px 0 22px", background: "linear-gradient(135deg, #0a3d4a, #006d7a, #0097a7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
           Ensemble, <em>changeons</em><br />des vies
         </h1>
-        <p style={{ color: "#C9B99A", fontSize: 18, lineHeight: 1.8, maxWidth: 560, margin: "0 auto" }}>
+        <p style={{ color: "#4a8a95", fontSize: 18, lineHeight: 1.8, maxWidth: 560, margin: "0 auto" }}>
           Association Ait Oudafel œuvre pour soutenir les familles dans le besoin, financer l'éducation et apporter une aide humanitaire Pour la Tribu.
         </p>
         <div style={{ marginTop: 56, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 20, padding: "32px 36px", backdropFilter: "blur(10px)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 14 }}>
-            <div><span style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, fontWeight: 700, color: "#FFD28C" }}>{donated.toLocaleString()}DHM</span><span style={{ color: "#C9B99A", fontSize: 14, marginLeft: 8 }}>collectés</span></div>
-            <div><span style={{ color: "#C9B99A", fontSize: 14 }}>Objectif </span><span style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: "#F5EDE0" }}>{GOAL.toLocaleString()}DHM</span></div>
+            <div><span style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, fontWeight: 700, color: "#006d7a" }}>{donated.toLocaleString()}DHM</span><span style={{ color: "#4a8a95", fontSize: 14, marginLeft: 8 }}>collectés</span></div>
+            <div><span style={{ color: "#4a8a95", fontSize: 14 }}>Objectif </span><span style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: "#0a3d4a" }}>{GOAL.toLocaleString()}DHM</span></div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.1)", borderRadius: 50, height: 14, overflow: "hidden" }}>
-            <div style={{ width: `${progress}%`, height: "100%", background: "linear-gradient(90deg, #D4892A, #FFD28C)", borderRadius: 50, transition: "width 1s ease", boxShadow: "0 0 20px rgba(255,210,140,0.4)" }} />
+            <div style={{ width: `${progress}%`, height: "100%", background: "linear-gradient(90deg, #0097a7, #006d7a)", borderRadius: 50, transition: "width 1s ease", boxShadow: "0 0 20px rgba(255,210,140,0.4)" }} />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: 14 }}>
-            <span style={{ color: "#FFD28C", fontWeight: 700, fontSize: 15 }}>{progress.toFixed(1)}% atteint</span>
-            <span style={{ color: "#C9B99A", fontSize: 14 }}>👥 {donors.toLocaleString()} donateurs</span>
+            <span style={{ color: "#006d7a", fontWeight: 700, fontSize: 15 }}>{progress.toFixed(1)}% atteint</span>
+            <span style={{ color: "#4a8a95", fontSize: 14 }}>👥 {donors.toLocaleString()} donateurs</span>
           </div>
         </div>
       </section>
@@ -286,7 +286,7 @@ export default function App() {
       <section ref={impactRef} style={{ padding: "60px 20px", maxWidth: 900, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div className="ornament">— ✦ —</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: "#FFD28C", marginTop: 16 }}>Notre Impact</h2>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: "#006d7a", marginTop: 16 }}>Notre Impact</h2>
         </div>
         <div className="grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
           {impacts.map((item, i) => <ImpactCard key={i} {...item} trigger={impactVisible} />)}
@@ -295,39 +295,39 @@ export default function App() {
 
       <section style={{ padding: "60px 20px", maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
         <div className="ornament">— ✦ —</div>
-        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: "#FFD28C", margin: "16px 0 40px" }}>Ils témoignent</h2>
+        <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: "#006d7a", margin: "16px 0 40px" }}>Ils témoignent</h2>
         <div style={{ position: "relative", minHeight: 220 }}>
           {testimonials.map((t, i) => (
             <div key={i} style={{ position: i === activeTestimonial ? "relative" : "absolute", top: 0, left: 0, right: 0, opacity: i === activeTestimonial ? 1 : 0, transform: `translateY(${i === activeTestimonial ? 0 : 20}px)`, transition: "all 0.6s ease", pointerEvents: i === activeTestimonial ? "auto" : "none", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 20, padding: "36px 40px", backdropFilter: "blur(10px)" }}>
               <div style={{ fontSize: 40, marginBottom: 16 }}>{t.icon}</div>
-              <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: 18, lineHeight: 1.8, color: "#F5EDE0", marginBottom: 20 }}>"{t.text}"</p>
-              <div style={{ color: "#FFD28C", fontWeight: 700 }}>{t.name}</div>
-              <div style={{ color: "#C9B99A", fontSize: 13 }}>{t.location}</div>
+              <p style={{ fontFamily: "'Playfair Display', serif", fontStyle: "italic", fontSize: 18, lineHeight: 1.8, color: "#0a3d4a", marginBottom: 20 }}>"{t.text}"</p>
+              <div style={{ color: "#006d7a", fontWeight: 700 }}>{t.name}</div>
+              <div style={{ color: "#4a8a95", fontSize: 13 }}>{t.location}</div>
             </div>
           ))}
         </div>
         <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 24 }}>
-          {testimonials.map((_, i) => <button key={i} onClick={() => setActiveTestimonial(i)} style={{ width: i === activeTestimonial ? 24 : 8, height: 8, borderRadius: 50, background: i === activeTestimonial ? "#FFD28C" : "rgba(255,210,140,0.3)", border: "none", cursor: "pointer", transition: "all 0.3s" }} />)}
+          {testimonials.map((_, i) => <button key={i} onClick={() => setActiveTestimonial(i)} style={{ width: i === activeTestimonial ? 24 : 8, height: 8, borderRadius: 50, background: i === activeTestimonial ? "#006d7a" : "rgba(255,210,140,0.3)", border: "none", cursor: "pointer", transition: "all 0.3s" }} />)}
         </div>
       </section>
 
       <section id="donate" style={{ padding: "60px 20px 100px", maxWidth: 600, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div className="ornament">— ✦ —</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: "#FFD28C", marginTop: 16 }}>Faire un don</h2>
-          <p style={{ color: "#C9B99A", marginTop: 10 }}>Chaque Dirham compte. Votre générosité change des destins.</p>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: "#006d7a", marginTop: 16 }}>Faire un don</h2>
+          <p style={{ color: "#4a8a95", marginTop: 10 }}>Chaque Dirham compte. Votre générosité change des destins.</p>
         </div>
         {submitted ? (
           <div style={{ background: "rgba(255,210,140,0.1)", border: "1px solid rgba(255,210,140,0.4)", borderRadius: 20, padding: "60px 40px", textAlign: "center" }}>
             <div style={{ fontSize: 60, marginBottom: 20 }}>✨</div>
-            <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, color: "#FFD28C", marginBottom: 12 }}>Merci pour votre don !</h3>
-            <p style={{ color: "#C9B99A", fontSize: 16 }}>Votre contribution de <strong style={{ color: "#FFD28C" }}>{finalAmount}DHM</strong> va aider des familles dans le besoin.<br />Que Allah vous récompense.</p>
+            <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, color: "#006d7a", marginBottom: 12 }}>Merci pour votre don !</h3>
+            <p style={{ color: "#4a8a95", fontSize: 16 }}>Votre contribution de <strong style={{ color: "#006d7a" }}>{finalAmount}DHM</strong> va aider des familles dans le besoin.<br />Que Allah vous récompense.</p>
             {emailStatus === "sent" && <p style={{ color: "#90EE90", marginTop: 12, fontSize: 13 }}>✅ Email de confirmation envoyé</p>}
           </div>
         ) : (
           <form onSubmit={handleDonate} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 24, padding: "40px 36px", backdropFilter: "blur(10px)", display: "flex", flexDirection: "column", gap: 20 }}>
             <div>
-              <label style={{ display: "block", marginBottom: 12, color: "#C9B99A", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Montant du don</label>
+              <label style={{ display: "block", marginBottom: 12, color: "#4a8a95", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Montant du don</label>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 12 }}>
                 {presets.map(p => <button key={p} type="button" className={`preset-btn ${amount == p ? "active" : ""}`} onClick={() => { setAmount(String(p)); setCustomAmount(""); }}>{p}DHM</button>)}
                 <button type="button" className={`preset-btn ${amount === "custom" ? "active" : ""}`} onClick={() => setAmount("custom")}>Autre</button>
@@ -335,26 +335,26 @@ export default function App() {
               {amount === "custom" && <input type="number" placeholder="Montant en euros" value={customAmount} onChange={e => setCustomAmount(e.target.value)} min="1" />}
             </div>
             <div>
-              <label style={{ display: "block", marginBottom: 8, color: "#C9B99A", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Votre nom</label>
+              <label style={{ display: "block", marginBottom: 8, color: "#4a8a95", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Votre nom</label>
               <input type="text" placeholder="Prénom et nom" value={name} onChange={e => setName(e.target.value)} required />
             </div>
             <div>
-              <label style={{ display: "block", marginBottom: 8, color: "#C9B99A", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Email</label>
+              <label style={{ display: "block", marginBottom: 8, color: "#4a8a95", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Email</label>
               <input type="email" placeholder="votre@email.com" value={email} onChange={e => setEmail(e.target.value)} required />
             </div>
             <div>
-              <label style={{ display: "block", marginBottom: 8, color: "#C9B99A", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Message (optionnel)</label>
+              <label style={{ display: "block", marginBottom: 8, color: "#4a8a95", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Message (optionnel)</label>
               <textarea placeholder="Un mot pour l'association..." value={message} onChange={e => setMessage(e.target.value)} rows={3} style={{ resize: "vertical" }} />
             </div>
             <button type="submit" className="donate-btn">Donner {finalAmount > 0 && !isNaN(finalAmount) ? `${finalAmount}DHM` : "maintenant"} 🤲</button>
-            <p style={{ textAlign: "center", color: "#C9B99A", fontSize: 12 }}>🔒 Paiement sécurisé · Vos données sont protégées</p>
+            <p style={{ textAlign: "center", color: "#4a8a95", fontSize: 12 }}>🔒 Paiement sécurisé · Vos données sont protégées</p>
           </form>
         )}
       </section>
 
       <footer style={{ borderTop: "1px solid rgba(255,210,140,0.15)", padding: "40px 20px", textAlign: "center" }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, color: "#FFD28C", marginBottom: 8 }}>Association Ait Oudafel Youngs</div>
-        <p style={{ color: "#C9B99A", fontSize: 13 }}>Ensemble, bâtissons un avenir meilleur · contact@aitoudafel-charite.org</p>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, color: "#006d7a", marginBottom: 8 }}>Association Ait Oudafel Youngs</div>
+        <p style={{ color: "#4a8a95", fontSize: 13 }}>Ensemble, bâtissons un avenir meilleur · contact@aitoudafel-charite.org</p>
         <div className="ornament" style={{ marginTop: 20 }}>✦</div>
       </footer>
     </div>
