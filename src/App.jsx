@@ -1,23 +1,23 @@
 import { useState, useEffect, useRef } from "react";
 
-const GOAL = 50000;
+const GOAL = 10000;
 
 const testimonials = [
   {
     name: "Fatima B.",
-    location: "Agadir",
+    location: "Ait oudfel",
     text: "Grâce à votre soutien, ma famille a pu traverser une période très difficile. Merci du fond du cœur.",
     icon: "🌸",
   },
   {
     name: "Mohammed K.",
-    location: "Casablanca",
+    location: "Ait oudfel",
     text: "L'association m'a aidé à financer les études de mes enfants. Un acte de générosité qui change des vies.",
     icon: "📚",
   },
   {
     name: "Aicha L.",
-    location: "Tiznit",
+    location: "Ait oudfel",
     text: "J'ai reçu une aide alimentaire pendant les mois les plus durs. Je ne saurai jamais assez vous remercier.",
     icon: "🤲",
   },
@@ -27,7 +27,7 @@ const impacts = [
   { label: "Familles aidées", value: 412, icon: "🏠" },
   { label: "Repas distribués", value: 8750, icon: "🍽️" },
   { label: "Bourses accordées", value: 93, icon: "🎓" },
-  { label: "Villages touchés", value: 17, icon: "🌍" },
+  { label: "Maisons touchés", value: 17, icon: "🌍" },
 ];
 
 function useCountUp(target, duration = 1500, trigger = false) {
@@ -94,8 +94,8 @@ function ImpactCard({ label, value, icon, trigger }) {
 }
 
 export default function App() {
-  const [donated, setDonated] = useState(27430);
-  const [donors, setDonors] = useState(183);
+  const [donated, setDonated] = useState(300);
+  const [donors, setDonors] = useState(13);
   const [amount, setAmount] = useState("");
   const [customAmount, setCustomAmount] = useState("");
   const [name, setName] = useState("");
@@ -444,7 +444,7 @@ export default function App() {
                   <button key={p} type="button"
                     className={`preset-btn ${amount == p ? "active" : ""}`}
                     onClick={() => { setAmount(String(p)); setCustomAmount(""); }}>
-                    {p}€
+                    {p}DHM
                   </button>
                 ))}
                 <button type="button"
@@ -454,7 +454,7 @@ export default function App() {
                 </button>
               </div>
               {amount === "custom" && (
-                <input type="number" placeholder="Montant en euros"
+                <input type="number" placeholder="Montant en Dirhams"
                   value={customAmount} onChange={(e) => setCustomAmount(e.target.value)} min="1" />
               )}
             </div>
@@ -485,7 +485,7 @@ export default function App() {
             </div>
 
             <button type="submit" className="donate-btn">
-              Donner {finalAmount > 0 && !isNaN(finalAmount) ? `${finalAmount}€` : "maintenant"} 🤲
+              Donner {finalAmount > 0 && !isNaN(finalAmount) ? `${finalAmount}DHM` : "maintenant"} 🤲
             </button>
 
             <p style={{ textAlign: "center", color: "#C9B99A", fontSize: 12 }}>
