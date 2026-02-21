@@ -11,9 +11,9 @@ const EMAILJS_PUBLIC_KEY  = "VOTRE_PUBLIC_KEY";   // ← Depuis emailjs.com
 // ══════════════════════════════════════════════
 
 const testimonials = [
-  { name: "Fatima B.", location: "Agadir", text: "Grâce à votre soutien, ma famille a pu traverser une période très difficile. Merci du fond du cœur.", icon: "🌸" },
-  { name: "Mohammed K.", location: "Casablanca", text: "L'association m'a aidé à financer les études de mes enfants. Un acte de générosité qui change des vies.", icon: "📚" },
-  { name: "Aicha L.", location: "Tiznit", text: "J'ai reçu une aide alimentaire pendant les mois les plus durs. Je ne saurai jamais assez vous remercier.", icon: "🤲" },
+  { name: "Fatima B.", location: "Ait Oudfel", text: "Grâce à votre soutien, ma famille a pu traverser une période très difficile. Merci du fond du cœur.", icon: "🌸" },
+  { name: "Mohammed K.", location: "Ait Oudfel", text: "L'association m'a aidé à financer les études de mes enfants. Un acte de générosité qui change des vies.", icon: "📚" },
+  { name: "Aicha L.", location: "Ait Oudfel", text: "J'ai reçu une aide alimentaire pendant les mois les plus durs. Je ne saurai jamais assez vous remercier.", icon: "🤲" },
 ];
 
 const impacts = [
@@ -59,7 +59,7 @@ function AdminPage({ onLogout }) {
 
   const exportCSV = () => {
     const header = "Date,Nom,Email,Montant,Message\n";
-    const rows = donations.map(d => `"${d.date}","${d.name}","${d.email}","${d.amount}€","${d.message || ""}"`).join("\n");
+    const rows = donations.map(d => `"${d.date}","${d.name}","${d.email}","${d.amount}DHM","${d.message || ""}"`).join("\n");
     const blob = new Blob([header + rows], { type: "text/csv;charset=utf-8;" });
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
     a.download = "dons-ait-oudafel.csv"; a.click();
@@ -72,7 +72,7 @@ function AdminPage({ onLogout }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 40 }}>
           <div>
             <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, color: "#FFD28C" }}>🔐 Tableau de bord</h1>
-            <p style={{ color: "#C9B99A", marginTop: 4 }}>Société Ait Oudafel pour charité</p>
+            <p style={{ color: "#C9B99A", marginTop: 4 }}>Association Ait Oudafel Youngs</p>
           </div>
           <div style={{ display: "flex", gap: 12 }}>
             <button onClick={exportCSV} style={{ background: "rgba(255,210,140,0.15)", border: "1px solid rgba(255,210,140,0.4)", color: "#FFD28C", padding: "10px 20px", borderRadius: 50, cursor: "pointer", fontSize: 14 }}>📥 Exporter CSV</button>
@@ -80,7 +80,7 @@ function AdminPage({ onLogout }) {
           </div>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 40 }}>
-          {[{ label: "Total collecté", value: `${total.toLocaleString()}€`, icon: "💰" }, { label: "Nombre de dons", value: donations.length, icon: "📋" }, { label: "Don moyen", value: donations.length ? `${Math.round(total / donations.length)}€` : "—", icon: "📊" }].map((s, i) => (
+          {[{ label: "Total collecté", value: `${total.toLocaleString()}DHM`, icon: "💰" }, { label: "Nombre de dons", value: donations.length, icon: "📋" }, { label: "Don moyen", value: donations.length ? `${Math.round(total / donations.length)}DHM` : "—", icon: "📊" }].map((s, i) => (
             <div key={i} style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 16, padding: "24px", textAlign: "center" }}>
               <div style={{ fontSize: 30, marginBottom: 8 }}>{s.icon}</div>
               <div style={{ fontSize: 28, fontFamily: "'Playfair Display', serif", fontWeight: 700, color: "#FFD28C" }}>{s.value}</div>
@@ -150,8 +150,8 @@ function AdminLogin({ onLogin }) {
 
 export default function App() {
   const [page, setPage] = useState("home");
-  const [donated, setDonated] = useState(() => 27430 + JSON.parse(localStorage.getItem("donations") || "[]").reduce((s, d) => s + d.amount, 0));
-  const [donors, setDonors] = useState(() => 183 + JSON.parse(localStorage.getItem("donations") || "[]").length);
+  const [donated, setDonated] = useState(() => 300 + JSON.parse(localStorage.getItem("donations") || "[]").reduce((s, d) => s + d.amount, 0));
+  const [donors, setDonors] = useState(() => 6 + JSON.parse(localStorage.getItem("donations") || "[]").length);
   const [amount, setAmount] = useState("");
   const [customAmount, setCustomAmount] = useState("");
   const [name, setName] = useState("");
@@ -266,7 +266,7 @@ export default function App() {
           Ensemble, <em>changeons</em><br />des vies
         </h1>
         <p style={{ color: "#C9B99A", fontSize: 18, lineHeight: 1.8, maxWidth: 560, margin: "0 auto" }}>
-          La Société Ait Oudafel œuvre pour soutenir les familles dans le besoin, financer l'éducation et apporter une aide humanitaire dans les régions les plus vulnérables.
+          Association Ait Oudafel œuvre pour soutenir les familles dans le besoin, financer l'éducation et apporter une aide humanitaire Pour la Tribu.
         </p>
         <div style={{ marginTop: 56, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 20, padding: "32px 36px", backdropFilter: "blur(10px)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 14 }}>
@@ -315,13 +315,13 @@ export default function App() {
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <div className="ornament">— ✦ —</div>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: "#FFD28C", marginTop: 16 }}>Faire un don</h2>
-          <p style={{ color: "#C9B99A", marginTop: 10 }}>Chaque euro compte. Votre générosité change des destins.</p>
+          <p style={{ color: "#C9B99A", marginTop: 10 }}>Chaque Dirham compte. Votre générosité change des destins.</p>
         </div>
         {submitted ? (
           <div style={{ background: "rgba(255,210,140,0.1)", border: "1px solid rgba(255,210,140,0.4)", borderRadius: 20, padding: "60px 40px", textAlign: "center" }}>
             <div style={{ fontSize: 60, marginBottom: 20 }}>✨</div>
             <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, color: "#FFD28C", marginBottom: 12 }}>Merci pour votre don !</h3>
-            <p style={{ color: "#C9B99A", fontSize: 16 }}>Votre contribution de <strong style={{ color: "#FFD28C" }}>{finalAmount}€</strong> va aider des familles dans le besoin.<br />Que Dieu vous récompense.</p>
+            <p style={{ color: "#C9B99A", fontSize: 16 }}>Votre contribution de <strong style={{ color: "#FFD28C" }}>{finalAmount}€</strong> va aider des familles dans le besoin.<br />Que Allah vous récompense.</p>
             {emailStatus === "sent" && <p style={{ color: "#90EE90", marginTop: 12, fontSize: 13 }}>✅ Email de confirmation envoyé</p>}
           </div>
         ) : (
@@ -353,7 +353,7 @@ export default function App() {
       </section>
 
       <footer style={{ borderTop: "1px solid rgba(255,210,140,0.15)", padding: "40px 20px", textAlign: "center" }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, color: "#FFD28C", marginBottom: 8 }}>Société Ait Oudafel pour charité</div>
+        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, color: "#FFD28C", marginBottom: 8 }}>Association Ait Oudafel Youngs</div>
         <p style={{ color: "#C9B99A", fontSize: 13 }}>Ensemble, bâtissons un avenir meilleur · contact@aitoudafel-charite.org</p>
         <div className="ornament" style={{ marginTop: 20 }}>✦</div>
       </footer>
