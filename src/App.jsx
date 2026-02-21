@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 // ══════════════════════════════════════════════
 // ⚙️  CONFIGURATION — À MODIFIER
 // ══════════════════════════════════════════════
-const GOAL = 50000;
+const GOAL = 10000;
 const ADMIN_PASSWORD = "aitoudafel2024"; // ← Changez ce mot de passe !
 const EMAILJS_SERVICE_ID  = "VOTRE_SERVICE_ID";   // ← Depuis emailjs.com
 const EMAILJS_TEMPLATE_ID = "VOTRE_TEMPLATE_ID";  // ← Depuis emailjs.com
@@ -250,8 +250,8 @@ export default function App() {
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div style={{ width: 44, height: 44, background: "linear-gradient(135deg, #D4892A, #FFD28C)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🤝</div>
           <div>
-            <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 16, color: "#FFD28C", lineHeight: 1.1 }}>Société Ait Oudafel</div>
-            <div style={{ fontSize: 11, color: "#C9B99A", letterSpacing: 2, textTransform: "uppercase" }}>pour charité</div>
+            <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 16, color: "#FFD28C", lineHeight: 1.1 }}>Association Ait Oudafel Youngs</div>
+            <div style={{ fontSize: 11, color: "#C9B99A", letterSpacing: 2, textTransform: "uppercase" }}>pour Aide</div>
           </div>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
