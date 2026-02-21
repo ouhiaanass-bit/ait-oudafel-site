@@ -241,7 +241,7 @@ export default function App() {
       <div style={{ position: "fixed", bottom: 30, left: 30, zIndex: 1000, display: "flex", flexDirection: "column", gap: 10 }}>
         {floatingDonations.map(d => (
           <div key={d.id} className="floating-notif" style={{ background: "linear-gradient(135deg, #D4892A, #FFD28C)", color: "#1a0f00", padding: "12px 20px", borderRadius: 50, fontWeight: 700, fontSize: 14, boxShadow: "0 8px 30px rgba(212,137,42,0.5)" }}>
-            🎉 {d.name} vient de donner {d.amount}€ !
+            🎉 {d.name} vient de donner {d.amount}DHM !
           </div>
         ))}
       </div>
@@ -270,8 +270,8 @@ export default function App() {
         </p>
         <div style={{ marginTop: 56, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 20, padding: "32px 36px", backdropFilter: "blur(10px)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 14 }}>
-            <div><span style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, fontWeight: 700, color: "#FFD28C" }}>{donated.toLocaleString()}€</span><span style={{ color: "#C9B99A", fontSize: 14, marginLeft: 8 }}>collectés</span></div>
-            <div><span style={{ color: "#C9B99A", fontSize: 14 }}>Objectif </span><span style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: "#F5EDE0" }}>{GOAL.toLocaleString()}€</span></div>
+            <div><span style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, fontWeight: 700, color: "#FFD28C" }}>{donated.toLocaleString()}DHM</span><span style={{ color: "#C9B99A", fontSize: 14, marginLeft: 8 }}>collectés</span></div>
+            <div><span style={{ color: "#C9B99A", fontSize: 14 }}>Objectif </span><span style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: "#F5EDE0" }}>{GOAL.toLocaleString()}DHM</span></div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.1)", borderRadius: 50, height: 14, overflow: "hidden" }}>
             <div style={{ width: `${progress}%`, height: "100%", background: "linear-gradient(90deg, #D4892A, #FFD28C)", borderRadius: 50, transition: "width 1s ease", boxShadow: "0 0 20px rgba(255,210,140,0.4)" }} />
@@ -321,7 +321,7 @@ export default function App() {
           <div style={{ background: "rgba(255,210,140,0.1)", border: "1px solid rgba(255,210,140,0.4)", borderRadius: 20, padding: "60px 40px", textAlign: "center" }}>
             <div style={{ fontSize: 60, marginBottom: 20 }}>✨</div>
             <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, color: "#FFD28C", marginBottom: 12 }}>Merci pour votre don !</h3>
-            <p style={{ color: "#C9B99A", fontSize: 16 }}>Votre contribution de <strong style={{ color: "#FFD28C" }}>{finalAmount}€</strong> va aider des familles dans le besoin.<br />Que Allah vous récompense.</p>
+            <p style={{ color: "#C9B99A", fontSize: 16 }}>Votre contribution de <strong style={{ color: "#FFD28C" }}>{finalAmount}DHM</strong> va aider des familles dans le besoin.<br />Que Allah vous récompense.</p>
             {emailStatus === "sent" && <p style={{ color: "#90EE90", marginTop: 12, fontSize: 13 }}>✅ Email de confirmation envoyé</p>}
           </div>
         ) : (
@@ -329,7 +329,7 @@ export default function App() {
             <div>
               <label style={{ display: "block", marginBottom: 12, color: "#C9B99A", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Montant du don</label>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 12 }}>
-                {presets.map(p => <button key={p} type="button" className={`preset-btn ${amount == p ? "active" : ""}`} onClick={() => { setAmount(String(p)); setCustomAmount(""); }}>{p}€</button>)}
+                {presets.map(p => <button key={p} type="button" className={`preset-btn ${amount == p ? "active" : ""}`} onClick={() => { setAmount(String(p)); setCustomAmount(""); }}>{p}DHM</button>)}
                 <button type="button" className={`preset-btn ${amount === "custom" ? "active" : ""}`} onClick={() => setAmount("custom")}>Autre</button>
               </div>
               {amount === "custom" && <input type="number" placeholder="Montant en euros" value={customAmount} onChange={e => setCustomAmount(e.target.value)} min="1" />}
@@ -346,7 +346,7 @@ export default function App() {
               <label style={{ display: "block", marginBottom: 8, color: "#C9B99A", fontSize: 13, textTransform: "uppercase", letterSpacing: 1.5 }}>Message (optionnel)</label>
               <textarea placeholder="Un mot pour l'association..." value={message} onChange={e => setMessage(e.target.value)} rows={3} style={{ resize: "vertical" }} />
             </div>
-            <button type="submit" className="donate-btn">Donner {finalAmount > 0 && !isNaN(finalAmount) ? `${finalAmount}€` : "maintenant"} 🤲</button>
+            <button type="submit" className="donate-btn">Donner {finalAmount > 0 && !isNaN(finalAmount) ? `${finalAmount}DHM` : "maintenant"} 🤲</button>
             <p style={{ textAlign: "center", color: "#C9B99A", fontSize: 12 }}>🔒 Paiement sécurisé · Vos données sont protégées</p>
           </form>
         )}
