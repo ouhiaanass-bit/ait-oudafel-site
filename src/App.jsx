@@ -109,7 +109,7 @@ function AdminPage({ onLogout }) {
                     <td style={{ padding: "14px 20px", color: "#C9B99A", fontSize: 13 }}>{d.date}</td>
                     <td style={{ padding: "14px 20px", color: "#F5EDE0", fontWeight: 700 }}>{d.name}</td>
                     <td style={{ padding: "14px 20px", color: "#C9B99A", fontSize: 13 }}>{d.email}</td>
-                    <td style={{ padding: "14px 20px" }}><span style={{ background: "rgba(255,210,140,0.15)", color: "#FFD28C", padding: "4px 12px", borderRadius: 50, fontSize: 13, fontWeight: 700 }}>{d.amount}€</span></td>
+                    <td style={{ padding: "14px 20px" }}><span style={{ background: "rgba(255,210,140,0.15)", color: "#FFD28C", padding: "4px 12px", borderRadius: 50, fontSize: 13, fontWeight: 700 }}>{d.amount}DHM</span></td>
                     <td style={{ padding: "14px 20px", color: "#C9B99A", fontSize: 13, fontStyle: d.message ? "normal" : "italic" }}>{d.message || "—"}</td>
                   </tr>
                 ))}
@@ -136,7 +136,7 @@ function AdminLogin({ onLogin }) {
       <div style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,210,140,0.2)", borderRadius: 24, padding: "48px 40px", width: "100%", maxWidth: 400, textAlign: "center" }}>
         <div style={{ fontSize: 48, marginBottom: 16 }}>🔐</div>
         <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, color: "#FFD28C", marginBottom: 8 }}>Espace Admin</h1>
-        <p style={{ color: "#C9B99A", fontSize: 14, marginBottom: 32 }}>Société Ait Oudafel pour charité</p>
+        <p style={{ color: "#C9B99A", fontSize: 14, marginBottom: 32 }}>Association Ait Oudafel Youngs</p>
         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <input type="password" placeholder="Mot de passe" value={pwd} onChange={e => setPwd(e.target.value)}
             style={{ background: "rgba(255,255,255,0.07)", border: `1px solid ${error ? "rgba(255,100,100,0.6)" : "rgba(255,210,140,0.25)"}`, borderRadius: 10, color: "#F5EDE0", padding: "13px 16px", fontSize: 15, outline: "none", textAlign: "center", letterSpacing: 4 }} />
