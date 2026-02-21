@@ -285,7 +285,7 @@ export default function App() {
           }}>🤝</div>
           <div>
             <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 16, color: "#FFD28C", lineHeight: 1.1 }}>
-              Société Ait Oudafel
+              Association Ait Oudafel Youngs
             </div>
             <div style={{ fontSize: 11, color: "#C9B99A", letterSpacing: 2, textTransform: "uppercase" }}>pour charité</div>
           </div>
@@ -312,8 +312,8 @@ export default function App() {
           Ensemble, <em>changeons</em><br />des vies
         </h1>
         <p style={{ color: "#C9B99A", fontSize: 18, lineHeight: 1.8, maxWidth: 560, margin: "0 auto" }}>
-          La Société Ait Oudafel œuvre pour soutenir les familles dans le besoin,
-          financer l'éducation et apporter une aide humanitaire dans les régions les plus vulnérables.
+          Association Ait Oudafel Youngs œuvre pour soutenir les familles dans le besoin,
+         l'aide pour les funérailles,l'éducation et apporter une aide humanitaire Pour Tous les citoyens de Ait Oudfel.
         </p>
 
         {/* Progress card */}
@@ -325,14 +325,14 @@ export default function App() {
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 14 }}>
             <div style={{ textAlign: "left" }}>
               <span style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, fontWeight: 700, color: "#FFD28C" }}>
-                {donated.toLocaleString()}€
+                {donated.toLocaleString()}Dh
               </span>
               <span style={{ color: "#C9B99A", fontSize: 14, marginLeft: 8 }}>collectés</span>
             </div>
             <div style={{ textAlign: "right" }}>
               <span style={{ color: "#C9B99A", fontSize: 14 }}>Objectif </span>
               <span style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: "#F5EDE0" }}>
-                {GOAL.toLocaleString()}€
+                {GOAL.toLocaleString()}Dh
               </span>
             </div>
           </div>
@@ -412,7 +412,7 @@ export default function App() {
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 36, fontWeight: 700, color: "#FFD28C", marginTop: 16 }}>
             Faire un don
           </h2>
-          <p style={{ color: "#C9B99A", marginTop: 10 }}>Chaque euro compte. Votre générosité change des destins.</p>
+          <p style={{ color: "#C9B99A", marginTop: 10 }}>Chaque Dirham compte. Votre générosité change des destins.</p>
         </div>
 
         {submitted ? (
@@ -426,7 +426,7 @@ export default function App() {
             </h3>
             <p style={{ color: "#C9B99A", fontSize: 16 }}>
               Votre contribution de <strong style={{ color: "#FFD28C" }}>{finalAmount}€</strong> va aider des familles dans le besoin.<br />
-              Que Dieu vous récompense.
+              Que Allah vous récompense.
             </p>
           </div>
         ) : (
@@ -498,7 +498,7 @@ export default function App() {
       {/* FOOTER */}
       <footer style={{ borderTop: "1px solid rgba(255,210,140,0.15)", padding: "40px 20px", textAlign: "center" }}>
         <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, color: "#FFD28C", marginBottom: 8 }}>
-          Société Ait Oudafel pour charité
+          Association Ait Oudafel Youngs Fort Ensemble.
         </div>
         <p style={{ color: "#C9B99A", fontSize: 13 }}>
           Ensemble, bâtissons un avenir meilleur · contact@aitoudafel-charite.org
